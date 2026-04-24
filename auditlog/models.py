@@ -12,7 +12,7 @@ from django.db.models import Q, QuerySet
 from django.utils import formats, timezone
 from django.utils.encoding import smart_str
 from django.utils.translation import gettext_lazy as _
-
+from django.contrib.postgres.fields import JSONField
 
 class LogEntryManager(models.Manager):
     """
@@ -271,7 +271,7 @@ class LogEntry(models.Model):
     timestamp = models.DateTimeField(
         db_index=True, auto_now_add=True, verbose_name=_("timestamp")
     )
-    additional_data = models.JSONField(
+    additional_data = JSONField(
         blank=True, null=True, verbose_name=_("additional data")
     )
 

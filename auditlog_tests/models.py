@@ -1,6 +1,6 @@
 import uuid
 
-from django.contrib.postgres.fields import ArrayField
+from django.contrib.postgres.fields import ArrayField, JSONField
 from django.db import models
 
 from auditlog.models import AuditlogHistoryField
@@ -257,7 +257,7 @@ class NoDeleteHistoryModel(models.Model):
 
 
 class JSONModel(models.Model):
-    json = models.JSONField(default=dict)
+    json = JSONField(default=dict)
 
     history = AuditlogHistoryField(delete_related=False)
 

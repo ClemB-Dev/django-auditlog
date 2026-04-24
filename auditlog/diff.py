@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
-from django.db.models import NOT_PROVIDED, DateTimeField, JSONField, Model
+from django.db.models import NOT_PROVIDED, DateTimeField, Model
+from django.contrib.postgres.fields import JSONField
 from django.utils import timezone
 from django.utils.encoding import smart_str
 

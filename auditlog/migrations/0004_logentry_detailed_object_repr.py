@@ -1,5 +1,5 @@
 from django.db import migrations, models
-
+from django.contrib.postgres.fields import JSONField
 
 class Migration(migrations.Migration):
 
@@ -11,6 +11,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="logentry",
             name="additional_data",
-            field=models.JSONField(null=True, blank=True),
+            field=JSONField(null=True, blank=True),
         ),
     ]
